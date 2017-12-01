@@ -1,10 +1,14 @@
 var assert = require('assert');
 var Store = require('../source/store.js');
+var Record = require('../source/record.js');
 
 describe("Store test", function() {
   var store;
+  var record;
   beforeEach(function() {
     store = new Store("Big Al's Record Store", "Glasgae", 1000);
+
+    record = new Record("Chad", "Chopin Op.25 Etudes", "Classical", 15);
   });
 
   it('should have a name', function() {
@@ -24,6 +28,7 @@ describe("Store test", function() {
   });
 
   it("should be able to add records", function() {
-    assert.strictEqual(store.inventory, [record1]);
+    store.addRecord(record);
+    assert.deepStrictEqual(store.inventory, [record]);
   });
 });
