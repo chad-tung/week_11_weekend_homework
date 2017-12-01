@@ -1,3 +1,5 @@
+var _ = require('lodash');
+
 var Store = function(name, city, balance) {
   this.name = name;
   this.city = city;
@@ -9,15 +11,24 @@ Store.prototype = {
   addRecord: function(record) {
     this.inventory.push(record);
   },
+
   displayInventory: function() {
     var hash = {};
     for (item of this.inventory) {
-      if hash[item.title] = 0;
+      hash[item.title] = 0;
     }
     for (item of this.inventory) {
       hash[item.title] += 1;
     }
     return hash;
+  },
+
+  sellRecord: function(record) {
+    if (this.inventory.includes(record)) {
+      this.balance += record.price;
+      this.inventory.splice(_.findIndex(this.inventory, record), 1);
+    }
+
   }
 
 };
