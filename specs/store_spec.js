@@ -21,5 +21,9 @@ describe("Store test", function() {
 
   it("should have a balance", function() {
     assert.strictEqual(store.balance, 1000);
-  })
+  });
+
+  it("should be able to add records", function() {
+    assert.strictEqual(store.inventory, [record1]);
+  });
 });
