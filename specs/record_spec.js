@@ -4,7 +4,7 @@ var Record = require('../source/record.js')
 describe("Record test", function() {
   var record;
   beforeEach(function() {
-    record = new Record("Chad", "Chopin Op.25 Etudes");
+    record = new Record("Chad", "Chopin Op.25 Etudes", "Classical");
   });
 
   it("should have an artist", function() {
