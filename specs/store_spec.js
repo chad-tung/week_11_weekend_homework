@@ -4,7 +4,7 @@ var Store = require('../source/store.js');
 describe("Store test", function() {
   var store;
   beforeEach(function() {
-    store = new Store("Big Al's Record Store")
+    store = new Store("Big Al's Record Store", "Glasgae");
   });
 
   it('should have a name', function() {
