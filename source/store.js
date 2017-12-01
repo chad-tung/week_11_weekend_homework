@@ -27,10 +27,17 @@ Store.prototype = {
     if (this.inventory.includes(record)) {
       this.balance += record.price;
       this.inventory.splice(_.findIndex(this.inventory, record), 1);
-    } else {
-      this.balance = this.balance;
     }
+  },
 
+  financialStatus: function() {
+    var hash = {};
+    hash["Store balance"] = this.balance;
+    hash["Inventory value"] = 0;
+    for (item of this.inventory) {
+      hash["Inventory value"] += item.price;
+    }
+    return hash;
   }
 
 };

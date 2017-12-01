@@ -62,5 +62,9 @@ describe("Store test", function() {
     assert.deepStrictEqual(store.inventory, []);
   });
 
-  
+  it("should be able to display financial status", function() {
+    assert.deepStrictEqual(store.financialStatus(), { "Store balance": 1000, "Inventory value": 0 });
+  });
+
+
 });
