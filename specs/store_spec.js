@@ -73,7 +73,10 @@ describe("Store test", function() {
     store.addRecord(record);
     store.addRecord(record);
     store.addRecord(record2);
+
     assert.deepStrictEqual(store.findByGenre('Classical'), { "Chopin Op.25 Etudes": 2});
+    
+    assert.deepStrictEqual(store.findByGenre('Spoof'), { "Recorder Fails": 1});
   });
 
 
