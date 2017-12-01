@@ -14,4 +14,8 @@ describe("Store test", function() {
   it("should have a city", function() {
     assert.strictEqual(store.city, "Glasgae");
   });
+
+  it("should have an inventory", function() {
+    assert.deepStrictEqual(store.inventory, []);
+  });
 });
