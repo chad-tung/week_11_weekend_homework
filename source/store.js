@@ -40,8 +40,16 @@ Store.prototype = {
     return hash;
   },
 
-  findByGenre: function() {
-    
+  findByGenre: function(genre) {
+    var hash = {};
+    var filteredArray = _.filter(this.inventory, ['genre', genre]);
+    for (item of filteredArray) {
+      hash[item.title] = 0;
+    }
+    for (item of filteredArray) {
+      hash[item.title] += 1;
+    }
+    return hash;
   }
 
 };
