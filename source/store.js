@@ -27,6 +27,8 @@ Store.prototype = {
     if (this.inventory.includes(record)) {
       this.balance += record.price;
       this.inventory.splice(_.findIndex(this.inventory, record), 1);
+    } else {
+      this.balance = this.balance;
     }
 
   }

@@ -55,4 +55,12 @@ describe("Store test", function() {
     assert.strictEqual(store.balance, 1015);
     assert.deepStrictEqual(store.inventory, []);
   });
+
+  it("should not be able to sell a record it doesn't have", function() {
+    store.sellRecord(record);
+    assert.strictEqual(store.balance, 1000);
+    assert.deepStrictEqual(store.inventory, []);
+  });
+
+  
 });
