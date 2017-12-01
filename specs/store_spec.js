@@ -30,5 +30,8 @@ describe("Store test", function() {
   it("should be able to add records", function() {
     store.addRecord(record);
     assert.deepStrictEqual(store.inventory, [record]);
+    
+    store.addRecord(record);
+    assert.deepStrictEqual(store.inventory, [record, record]);
   });
 });
