@@ -64,6 +64,16 @@ describe("Store test", function() {
 
   it("should be able to display financial status", function() {
     assert.deepStrictEqual(store.financialStatus(), { "Store balance": 1000, "Inventory value": 0 });
+    store.addRecord(record);
+    store.addRecord(record2);
+    assert.deepStrictEqual(store.financialStatus(), { "Store balance": 1000, "Inventory value": 35});
+  });
+
+  it("should be able to display records of a specific genre", function() {
+    store.addRecord(record);
+    store.addRecord(record);
+    store.addRecord(record2);
+    assert.deepStrictEqual(store.findByGenre('Classical'), { "Chopin Op.25": 2});
   });
 
 

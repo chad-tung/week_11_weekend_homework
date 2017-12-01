@@ -38,6 +38,10 @@ Store.prototype = {
       hash["Inventory value"] += item.price;
     }
     return hash;
+  },
+
+  findByGenre: function() {
+    
   }
 
 };
