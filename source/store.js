@@ -12,13 +12,14 @@ Store.prototype = {
   displayInventory: function() {
     var hash = {};
     for (item of this.inventory) {
-      hash[item.title] = 0;
+      if hash[item.title] = 0;
     }
     for (item of this.inventory) {
       hash[item.title] += 1;
     }
     return hash;
   }
+
 };
 
 module.exports = Store;
