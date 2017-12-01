@@ -13,5 +13,9 @@ describe("Record test", function() {
 
   it("should have a title", function() {
     assert.strictEqual(record.title, "Chopin Op.25 Etudes")
-  })
+  });
+
+  it("should have a genre", function() {
+    assert.strictEqual(record.genre, "Classical");
+  });
 })
