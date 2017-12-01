@@ -6,8 +6,12 @@ describe("Store test", function() {
   beforeEach(function() {
     store = new Store("Big Al's Record Store")
   });
-  
+
   it('should have a name', function() {
-    assert.strictEqual(store.name, "Big Al's Record Store")
+    assert.strictEqual(store.name, "Big Al's Record Store");
+  });
+
+  it("should have a city", function() {
+    assert.strictEqual(store.city, "Glasgae");
   });
 });
