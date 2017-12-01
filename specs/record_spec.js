@@ -22,4 +22,8 @@ describe("Record test", function() {
   it("should have a price", function() {
     assert.strictEqual(record.price, 15);
   });
+
+  it("should return a properties string", function() {
+    assert.strictEqual(record.properties(), "Artist: Chad\nTitle: Chopin Op.25 Etudes\nGenre: Classical\nPrice: 15");
+  });
 })
