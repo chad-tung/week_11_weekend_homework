@@ -1,3 +1,5 @@
+var _ = require('lodash');
+
 var RecordCollector = function(name, balance) {
   this.name = name;
   this.inventory = [];
@@ -21,6 +23,17 @@ RecordCollector.prototype = {
       };
     };
   },
-  
+
+  getTotalValue: function(genre) {
+    if (genre == undefined) {
+      return _.sumBy(this.inventory, function(record) {
+        return record.price;
+      });
+    } else {
+      return _.sumBy(_.filter(this.inventory, ['genre', genre]), function(record) {
+        return record.price;
+      });
+    };
+  }
 }
 module.exports = RecordCollector;

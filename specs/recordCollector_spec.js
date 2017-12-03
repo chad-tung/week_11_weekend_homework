@@ -6,12 +6,19 @@ describe("Record collector test", function() {
   var record;
   var record2;
   var collector;
+  var collector2;
   beforeEach(function() {
     collector = new RecordCollector("Pierce",  35);
 
     record = new Record("Chad", "Chopin Op.25 Etudes", "Classical", 15);
 
     record2 = new Record("Jazzy McJazz", "Jazz hits", "Jazz", 20);
+
+    collector2 = new RecordCollector("James", 1000);
+    collector2.buyRecord(record);
+    collector2.buyRecord(record);
+    collector2.buyRecord(record2);
+    collector2.buyRecord(record2);
   });
 
   it('should be able to buy a record', function() {
@@ -52,6 +59,10 @@ describe("Record collector test", function() {
   it('should not be able to sell records that it doesn\'t have', function() {
     collector.sellRecord(record);
     assert.strictEqual(collector.balance, 35);
+  });
+
+  it('should be able to find the total value of inventory', function() {
+    assert.strictEqual(collector2.getTotalValue(), 70);
   });
 
 });
