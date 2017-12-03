@@ -34,6 +34,12 @@ RecordCollector.prototype = {
         return record.price;
       });
     };
+  },
+
+  getMVRecord: function() {
+    return _.maxBy(this.inventory, function(record) {
+      return record.price;
+    });
   }
 };
 

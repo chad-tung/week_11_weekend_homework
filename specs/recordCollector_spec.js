@@ -65,16 +65,16 @@ describe("Record collector test", function() {
   });
 
   it('should be able to find the total value of inventory', function() {
-    assert.strictEqual(collector2.getTotalValue(), 70);
+    assert.strictEqual(collector2.getTotalValue(), 110);
   });
 
   it('should be able to find the value of inventory by genre', function() {
     assert.strictEqual(collector2.getTotalValue('Classical'), 30);
     assert.strictEqual(collector2.getTotalValue('Jazz'), 40);
-  })
+  });
 
   it('should be able to find the most valuable record', function() {
-    assert.deepStrictEqual(collector2.getMVRecord, record3);
-  })
+    assert.deepStrictEqual(collector2.getMVRecord(), record3);
+  });
 
 });
