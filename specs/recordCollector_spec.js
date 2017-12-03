@@ -41,4 +41,11 @@ describe("Record collector test", function() {
     assert.strictEqual(collector.balance, 15);
   });
 
+  it('should add funds when a record is sold', function() {
+    collector.buyRecord(record);
+    assert.strictEqual(collector.balance, 20);
+    collector.sellRecord(record);
+    assert.strictEqual(collector.balance, 35);
+  });
+
 });

@@ -10,14 +10,17 @@ RecordCollector.prototype = {
       this.inventory.push(record);
       this.balance -= record.price;
     };
-
   },
+
   sellRecord: function(record) {
     for(item of this.inventory) {
       if (item === record) {
         this.inventory.splice(this.inventory.indexOf(item), 1);
+        this.balance += item.price;
+        break;
       };
     };
-  }
+  },
+  
 }
 module.exports = RecordCollector;
