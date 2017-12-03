@@ -77,8 +77,12 @@ describe("Record collector test", function() {
     assert.deepStrictEqual(collector2.getMVRecord(), record3);
   });
 
-  it('should be able to sort collection by max price', function() {
+  it('should be able to sort collection in descending order', function() {
     assert.deepStrictEqual(collector2.sortRecords('max'), [record3, record2, record2, record, record]);
+  });
+
+  it('should be able to sort collection in ascending order', function() {
+    assert.deepStrictEqual(collector2.sortRecords('min'), [record, record, record2, record2, record3]);
   });
 
 });
