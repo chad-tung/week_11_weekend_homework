@@ -65,4 +65,9 @@ describe("Record collector test", function() {
     assert.strictEqual(collector2.getTotalValue(), 70);
   });
 
+  it('should be able to find the value of inventory by genre', function() {
+    assert.strictEqual(collector2.getTotalValue('Classical'), 30);
+    assert.strictEqual(collector2.getTotalValue('Jazz'), 40);
+  })
+
 });
