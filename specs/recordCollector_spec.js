@@ -7,7 +7,7 @@ describe("Record collector test", function() {
   var record2;
   var collector;
   beforeEach(function() {
-    collector = new RecordCollector("Pierce");
+    collector = new RecordCollector("Pierce",  35);
 
     record = new Record("Chad", "Chopin Op.25 Etudes", "Classical", 15);
 
