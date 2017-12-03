@@ -43,9 +43,15 @@ RecordCollector.prototype = {
   },
 
   sortRecords(input) {
-    if (input.toLowercase() == 'max') {
-      _.sortBy
-    }
+    if (input == 'max') {
+      return _.sortBy(this.inventory, function(record) {
+        return record.price;
+      }).reverse();
+    } if (input == 'min') {
+      return _.sortBy(this.inventory, function(record) {
+        return record.price;
+      });
+    };
   }
 };
 
