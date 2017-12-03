@@ -28,4 +28,10 @@ describe("Record collector test", function() {
     assert.deepStrictEqual(collector.inventory, [record]);
   });
 
+  it('should deduct funds for a purchase', function() {
+    assert.strictEqual(collector.balance, 35);
+    collector.buyRecord(record);
+    assert.strictEqual(collector.balance, 20);
+  })
+
 });
