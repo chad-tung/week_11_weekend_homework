@@ -40,6 +40,12 @@ RecordCollector.prototype = {
     return _.maxBy(this.inventory, function(record) {
       return record.price;
     });
+  },
+
+  sortRecords(input) {
+    if (input.toLowercase() == 'max') {
+      _.sortBy
+    }
   }
 };
 
