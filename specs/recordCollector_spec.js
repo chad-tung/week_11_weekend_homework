@@ -34,4 +34,11 @@ describe("Record collector test", function() {
     assert.strictEqual(collector.balance, 20);
   });
 
+  it('should not be able to purchase when insufficient funds are available', function() {
+    collector.buyRecord(record2);
+    collector.buyRecord(record2);
+    assert.deepStrictEqual(collector.inventory, [record2]);
+    assert.strictEqual(collector.balance, 15);
+  });
+
 });
