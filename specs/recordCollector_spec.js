@@ -77,4 +77,9 @@ describe("Record collector test", function() {
     assert.deepStrictEqual(collector2.getMVRecord(), record3);
   });
 
+  it('should be able to sort collection by max price', function() {
+    collector2.sortRecords('max');
+    assert.deepStrictEqual(collector2.inventory, [record3, record2, record2, record, record]);
+  })
+
 });
