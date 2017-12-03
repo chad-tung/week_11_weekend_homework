@@ -46,6 +46,12 @@ describe("Record collector test", function() {
     assert.strictEqual(collector.balance, 20);
     collector.sellRecord(record);
     assert.strictEqual(collector.balance, 35);
+    assert.deepStrictEqual(collector.inventory, []);
+  });
+
+  it('should not be able to sell records that it doesn\'t have', function() {
+    collector.sellRecord(record);
+    assert.strictEqual(collector.balance, 35);
   });
 
 });
