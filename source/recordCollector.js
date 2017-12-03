@@ -35,5 +35,6 @@ RecordCollector.prototype = {
       });
     };
   }
-}
+};
+
 module.exports = RecordCollector;
