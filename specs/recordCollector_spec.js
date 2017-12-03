@@ -32,6 +32,6 @@ describe("Record collector test", function() {
     assert.strictEqual(collector.balance, 35);
     collector.buyRecord(record);
     assert.strictEqual(collector.balance, 20);
-  })
+  });
 
 });
