@@ -85,4 +85,9 @@ describe("Record collector test", function() {
     assert.deepStrictEqual(collector2.sortRecords('min'), [record, record, record2, record2, record3]);
   });
 
+  it('should be able to compare inventories with another collector', function() {
+    assert.strictEqual(collector.compareInventory(collector2), -110);
+    collector.buyRecord(record2);
+    assert.strictEqual(collector2.compareInventory(collector), 90);
+  })
 });

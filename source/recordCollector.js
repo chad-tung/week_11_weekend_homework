@@ -52,6 +52,10 @@ RecordCollector.prototype = {
         return record.price;
       });
     };
+  },
+
+  compareInventory(collector) {
+    return this.getTotalValue() - collector.getTotalValue();
   }
 };
 
