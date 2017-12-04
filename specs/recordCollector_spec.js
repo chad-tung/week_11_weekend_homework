@@ -89,5 +89,7 @@ describe("Record collector test", function() {
     assert.strictEqual(collector.compareInventory(collector2), -110);
     collector.buyRecord(record2);
     assert.strictEqual(collector2.compareInventory(collector), 90);
-  })
+  });
+
+  
 });

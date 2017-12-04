@@ -15,10 +15,12 @@ Store.prototype = {
   displayInventory: function() {
     var hash = {};
     for (item of this.inventory) {
-      hash[item.title] = 0;
-    }
-    for (item of this.inventory) {
-      hash[item.title] += 1;
+      if (hash[item.title] == undefined) {
+        hash[item.title] = 1;
+      }
+      else {
+        hash[item.title] += 1;
+      }
     }
     return hash;
   },
@@ -44,11 +46,13 @@ Store.prototype = {
     var hash = {};
     var filteredArray = _.filter(this.inventory, ['genre', genre]);
     for (item of filteredArray) {
-      hash[item.title] = 0;
-    }
-    for (item of filteredArray) {
-      hash[item.title] += 1;
-    }
+      if (hash[item.title] == undefined) {
+        hash[item.title] = 1;
+      }
+      else {
+        hash[item.title] += 1;
+      };
+    };
     return hash;
   }
 
