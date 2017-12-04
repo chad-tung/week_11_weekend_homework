@@ -29,7 +29,8 @@ RecordCollector.prototype = {
       return _.sumBy(this.inventory, function(record) {
         return record.price;
       })
-    } else {
+    }
+    else {
       return _.sumBy(_.filter(this.inventory, ['genre', genre]), function(record) {
         return record.price;
       });

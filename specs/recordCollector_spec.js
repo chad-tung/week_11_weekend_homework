@@ -38,6 +38,11 @@ describe("Record collector test", function() {
     assert.deepStrictEqual(collector.inventory, [record]);
   });
 
+  it('should not sell all records that are the same', function() {
+    collector2.sellRecord(record2);
+    assert.deepStrictEqual(collector2.inventory, [record, record, record2, record3]);
+  })
+
   it('should deduct funds for a purchase', function() {
     assert.strictEqual(collector.balance, 35);
     collector.buyRecord(record);
@@ -91,5 +96,5 @@ describe("Record collector test", function() {
     assert.strictEqual(collector2.compareInventory(collector), 90);
   });
 
-  
+
 });
